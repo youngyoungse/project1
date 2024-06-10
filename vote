@@ -4,31 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>간단한 투표</title>
+    <style>
+        .options {
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+        }
+        .option-btn {
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .option-btn:hover {
+            background-color: #e0e0e0;
+        }
+        .selected {
+            background-color: #b3e5fc;
+        }
+    </style>
 </head>
 <body>
     <h1>어떤 항목에 투표하시겠습니까?</h1>
-    <form id="pollForm">
-        <input type="radio" id="option1" name="vote" value="option1">
-        <label for="option1">옵션 1</label><br>
-        <input type="radio" id="option2" name="vote" value="option2">
-        <label for="option2">옵션 2</label><br>
-        <input type="radio" id="option3" name="vote" value="option3">
-        <label for="option3">옵션 3</label><br>
-        <input type="submit" value="투표하기">
-    </form>
+    <div class="options">
+        <button class="option-btn" onclick="vote('option1')">옵션 1</button>
+        <button class="option-btn" onclick="vote('option2')">옵션 2</button>
+        <button class="option-btn" onclick="vote('option3')">옵션 3</button>
+    </div>
     <div id="result"></div>
 
     <script>
-        document.getElementById("pollForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            var selectedOption = document.querySelector('input[name="vote"]:checked');
-            if (selectedOption) {
-                var resultDiv = document.getElementById("result");
-                resultDiv.innerHTML = "당신이 투표한 것은 " + selectedOption.value + " 입니다.";
+        var votedOption = null;
+
+        function vote(option) {
+            if (votedOption === option) {
+                // 이미 선택한 옵션을 다시 클릭하면 취소
+                votedOption = null;
             } else {
-                alert("옵션을 선택해주세요.");
+                votedOption = option;
             }
-        });
+            displayResult();
+        }
+
+        function displayResult() {
+            var resultDiv = document.getElementById("result");
+            if (votedOption) {
+                resultDiv.innerHTML = "당신이 투표한 것은 " + votedOption + " 입니다.";
+            } else {
+                resultDiv.innerHTML = "아직 투표하지 않았습니다.";
+            }
+        }
     </script>
 </body>
 </html>
