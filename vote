@@ -24,7 +24,7 @@
             var selectedOption = document.querySelector('input[name="vote"]:checked');
             if (selectedOption) {
                 var resultDiv = document.getElementById("result");
-                resultDiv.innerHTML = "당신이 투표한 옵션은 " + selectedOption.value + " 입니다.";
+                resultDiv.innerHTML = "당신이 투표한 것은 " + selectedOption.value + " 입니다.";
             } else {
                 alert("옵션을 선택해주세요.");
             }
