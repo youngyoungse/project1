@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>간단한 웹페이지</title>
+    <title>초등컴퓨터교육 프로젝트</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,7 +46,7 @@
 </head>
 <body>
     <header>
-        <h1>웹페이지 제목</h1>
+        <h1>기말고사 팀프로젝트</h1>
     </header>
     <nav>
         <a href="#">메뉴1</a>
@@ -54,8 +54,8 @@
         <a href="#">메뉴3</a>
     </nav>
     <section>
-        <h2>섹션 제목</h2>
-        <p>여기에 섹션 내용이 들어갑니다.</p>
+        <h2>하하</h2>
+        <p>모두 화이팅</p>
     </section>
     <footer>
         <p>© 2024 웹페이지. All rights reserved.</p>
