@@ -4,32 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>간단한 투표</title>
-    <style>
-        .options {
-            display: flex;
-            justify-content: space-between;
-            width: 300px;
-        }
-        .option-btn {
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
-        .option-btn:hover {
-            background-color: #e0e0e0;
-        }
-        .selected {
-            background-color: #b3e5fc;
-        }
-    </style>
 </head>
 <body>
-    <h1>어떤 항목에 투표하실래요?</h1>
-    <div class="options">
-        <button class="option-btn" onclick="vote('option1')">옵션 1</button>
-        <button class="option-btn" onclick="vote('option2')">옵션 2</button>
-        <button class="option-btn" onclick="vote('option3')">옵션 3</button>
+    <h1>어떤 항목에 투표하시겠습니까?</h1>
+    <div>
+        <a href="#" onclick="vote('option1')">옵션 1</a><br>
+        <a href="#" onclick="vote('option2')">옵션 2</a><br>
+        <a href="#" onclick="vote('option3')">옵션 3</a><br>
     </div>
     <div id="result"></div>
 
@@ -37,12 +18,7 @@
         var votedOption = null;
 
         function vote(option) {
-            if (votedOption === option) {
-                // 이미 선택한 옵션을 다시 클릭하면 취소
-                votedOption = null;
-            } else {
-                votedOption = option;
-            }
+            votedOption = option;
             displayResult();
         }
 
