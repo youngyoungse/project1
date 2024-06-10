@@ -25,7 +25,7 @@
     </style>
 </head>
 <body>
-    <h1>어떤 항목에 투표하시겠습니까?</h1>
+    <h1>어떤 항목에 투표하실래요?</h1>
     <div class="options">
         <button class="option-btn" onclick="vote('option1')">옵션 1</button>
         <button class="option-btn" onclick="vote('option2')">옵션 2</button>
